@@ -1,6 +1,6 @@
 
 <h1>Projeto Flappy Bird em Python</h1>
-<img src = "https://media.wired.co.uk/photos/606db3bf938ecee6e930f3be/1:1/w_1280,h_1280,c_limit/flappybird-1.jpg"/>
+
 <h1>Sobre o Projeto:</h1> 
 <h4>Projeto para desenvolver conhecimentos relacionados com as disciplinas já vistas no Curso de Ciencia da computação da Universidade Federal do Agreste de Pernambuco - UFAPE, como Banco de Dados, Programação Orientada a objeto, Projeto e Analise de Algoritimo, Engenharia de Software, entre outras. Assim como obter maior familiaridade com a linguagem de programação Python e a biblioteca Pygame</h4>
 
