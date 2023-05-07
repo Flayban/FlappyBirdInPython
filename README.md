@@ -27,5 +27,8 @@
    <li>Versão: 1.9.6</li>
 </ul>
 
+<h1>Observações</h1>
+Assents tiradas de https://github.com/sourabhv/FlapPyBird
+
 <h1>Status do Projeto:</h1>
 <h4>Em andamento</h4>
