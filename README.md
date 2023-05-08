@@ -24,7 +24,7 @@
 </ul>
 <h3><a href = "https://www.pygame.org/ftp/pygame-1.9.6.tar.gz">PyGame</a></h3>
 <ul>
-   <li>Versão: 1.9.6</li>
+   <li>Versão: 2.4.0</li>
 </ul>
 
 <h1>Observações</h1>
