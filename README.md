@@ -2,7 +2,7 @@
 <h1>Projeto Flappy Bird em Python</h1>
 
 <h1>Sobre o Projeto:</h1> 
-<h4>Projeto para desenvolver conhecimentos relacionados com as disciplinas já vistas no Curso de Ciencia da computação da Universidade Federal do Agreste de Pernambuco - UFAPE, como Banco de Dados, Programação Orientada a objeto, Projeto e Analise de Algoritimo, Engenharia de Software, entre outras. Assim como obter maior familiaridade com a linguagem de programação Python e a biblioteca Pygame</h4>
+<h4>Projeto para desenvolver conhecimentos relacionados com as disciplinas já vistas no Curso de Ciencia da computação da Universidade Federal do Agreste de Pernambuco - UFAPE, como Banco de Dados, Programação Orientada a objeto, Projeto e Analise de Algoritimo, Engenharia de Software, entre outras. Assim como obter maior familiaridade com a linguagem de programação Python, com a biblioteca Pygame e a IDE Visual Studio Code</h4>
 
 <h1>Objetivos do Projeto:</h1> 
 <ul>
