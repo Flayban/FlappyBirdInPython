@@ -17,10 +17,10 @@ birdGroup = pygame.sprite.Group() #Criação do agrupamento da Classe 'Bird'
 fBird = Bird() #Chamada da Classe 'Bird'
 birdGroup.add(fBird) #Adção do passaro criado aou agrupamento
 
-clock = pygame.time.Clock()
+clock = pygame.time.Clock() #chama a função clock, responsavel por determinar o FPS do sistema
 
 while True: #Laço de repetição infinito para manter janela aberta
-    clock.tick(30)
+    clock.tick(30) #Determina a quantidade de FPS do jogo
     for event in pygame.event.get(): #Iteração de evento com Pygame 
         if event.type == QUIT: #evento condicional: caso event.type == quit finalisa o programa
             pygame.quit() #Finaliza o Pygame
