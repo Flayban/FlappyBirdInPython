@@ -13,6 +13,9 @@ screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGTH)) #dimensiona o dis
 BACKGROUND = pygame.image.load('assets/sprites/background-day.png') #selecionando imagem de background
 BACKGROUND = pygame.transform.scale(BACKGROUND,(SCREEN_WIDTH,SCREEN_HEIGTH)) #redimensionando imagem de backgroud para mesma escala do display
 
+SPEED = 10
+GRAVITY = 1
+
 birdGroup = pygame.sprite.Group() #Criação do agrupamento da Classe 'Bird'
 fBird = Bird() #Chamada da Classe 'Bird'
 birdGroup.add(fBird) #Adção do passaro criado aou agrupamento
@@ -24,6 +27,10 @@ while True: #Laço de repetição infinito para manter janela aberta
     for event in pygame.event.get(): #Iteração de evento com Pygame 
         if event.type == QUIT: #evento condicional: caso event.type == quit finalisa o programa
             pygame.quit() #Finaliza o Pygame
+
+        if event.type == KEYDOWN:
+            if event.key == K_SPACE:
+                fBird.bump()
 
     screen.blit(BACKGROUND,(0,0)) #Excutando imagem de background no display
 

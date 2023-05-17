@@ -9,6 +9,8 @@ class Bird(pygame.sprite.Sprite): #Criação da classe 'Bird'
                       pygame.image.load('assets/sprites/bluebird-midflap.png').convert_alpha(),
                       pygame.image.load('assets/sprites/bluebird-downflap.png').convert_alpha()] #Imagens responsaveis pela animação
         
+        self.speed = 10
+
         self.current_image = 0 #Define a imagem atual entre as opções em self.images
 
         self.image = pygame.image.load('assets/sprites/bluebird-midflap.png').convert_alpha() #Selecionando a imagem do Passaro
@@ -23,4 +25,11 @@ class Bird(pygame.sprite.Sprite): #Criação da classe 'Bird'
     def update(self): #Metodo update da classe
         self.current_image = (self.current_image + 1) % 3 #faz a adição e quando self.current_image = 3 então o resto da divisão é 0, logo o ciclo é repetido 
         self.image = self.images[self.current_image] #Seleciona a imagem correnspondente as opções 
+
+        self.speed += 1
+        #Atualizar a Vertical
+        self.rect[1] += self.speed #Obs.: Deve ser feito ajustes para que a velocidade vertical seja feito de forma referenciada e numerado
         
+    def bump(self):
+        self.speed = -10
+       
