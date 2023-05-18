@@ -16,3 +16,5 @@ class Constant():
     # dimensões vertical e horizontal do 'pipe' em pixels
     PIPE_WIDTH = 120
     PIPE_HEIGTH = 500
+
+    PIPE_GAP = 200 #distancia entre os 'pipes' em pixels
