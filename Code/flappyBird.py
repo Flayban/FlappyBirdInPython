@@ -1,10 +1,22 @@
-import pygame, constant
+import pygame, random
+from constant import Constant
 from bird import Bird
 from ground import Ground
+from pipe import Pipe
 from pygame.locals import *
 
+def isOffScreen(sprite): #Metodo para verificar se algum sprite saiu completamente da tela
+    return sprite.rect[0] < -(sprite.rect[2])
+
+def getRandomPipes(xPos):
+    size = random.randint(100, 300)
+    pipe = Pipe(False, xPos, size)
+    pipeInverted = Pipe(True, xPos, Constant().SCREEN_HEIGTH - size - Constant().PIPE_GAP)
+
+    return (pipe, pipeInverted)
+
 pygame.init() #Inicia o Pygame
-const = constant.Constant()
+const = Constant()
 screen = pygame.display.set_mode((const.SCREEN_WIDTH,const.SCREEN_HEIGTH)) #dimensiona o display a partir das dimensões já definidas 
 
 BACKGROUND = pygame.image.load('assets/sprites/background-day.png') #selecionando imagem de background
@@ -16,13 +28,16 @@ birdGroup.add(fBird) #Adção do passaro criado ao agrupamento
 
 groundGrup = pygame.sprite.Group() #Criação do agrupamento da Classe 'Ground'
 for i in range(2): #Realiza a duplicação da chanada da Classe 'Ground'
-    fGround = Ground((const.GROUND_WIDTH)*i ) #Chamada da Classe 'Ground'
+    fGround = Ground((const.GROUND_WIDTH)* i ) #Chamada da Classe 'Ground'
     groundGrup.add(fGround) #Adção do ground criado ao agrupamento
 
-clock = pygame.time.Clock() #chama a função clock, responsavel por determinar o FPS do sistema
+pipeGroup = pygame.sprite.Group() #Criação do agrupamento da Classe 'Pipe'
+for i in range(2):
+    pipes = getRandomPipes(const.SCREEN_WIDTH* i + 800)
+    pipeGroup.add(pipes[0])
+    pipeGroup.add(pipes[1])
 
-def isOffScreen(sprite): #Metodo para verificar se algum sprite saiu completamente da tela
-    return sprite.rect[0] < -(sprite.rect[2])
+clock = pygame.time.Clock() #chama a função clock, responsavel por determinar o FPS do sistema
 
 while True: #Laço de repetição infinito para manter janela aberta
     clock.tick(30) #Determina a quantidade de FPS do jogo
@@ -43,13 +58,25 @@ while True: #Laço de repetição infinito para manter janela aberta
         newGround = Ground(const.GROUND_WIDTH - 20) #Criação de um novo ground
         groundGrup.add(newGround) #Adção do ground criado ao agrupamento
 
+    if isOffScreen(pipeGroup.sprites()[0]):
+        pipeGroup.remove(pipeGroup.sprites()[0])
+        pipeGroup.remove(pipeGroup.sprites()[0])
+
+        newPipe = getRandomPipes(const.SCREEN_WIDTH * 2)
+        pipeGroup.add(newPipe[0])
+        pipeGroup.add(newPipe[1])
+
     birdGroup.update() #Atualização do birdGrup
     groundGrup.update() #Atualização do groundGrup
+    pipeGroup.update() #Atualização do pipeGrup
 
-    birdGroup.draw(screen) #Informar o local que deseja que o passaro aparessa (neste caso na tela do jogo)
+    birdGroup.draw(screen) #Informar o local que deseja que o bird aparessa (neste caso na tela do jogo)
     groundGrup.draw(screen) #Informar o local que deseja que o ground aparessa (neste caso na tela do jogo)
+    pipeGroup.draw(screen) #Informar o local que deseja que o pipe aparessa (neste caso na tela do jogo)
 
     pygame.display.update() #Atualiza o display
 
-    if pygame.sprite.groupcollide(birdGroup, groundGrup, False, False, pygame.sprite.collide_mask): #Verifica se o Bird colodio com o Ground, se sim finaliza a aplicação
+    if (pygame.sprite.groupcollide(birdGroup, groundGrup, False, False, pygame.sprite.collide_mask) or pygame.sprite.groupcollide(birdGroup, pipeGroup, False, False, pygame.sprite.collide_mask)): #Verifica se o Bird colodio com o Ground ou Bird colodio com o Pipe , se sim finaliza a aplicação
         break #Finaliza a aplição
+
+           
