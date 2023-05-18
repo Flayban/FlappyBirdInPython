@@ -1,4 +1,5 @@
 import pygame
+import constant
 from pygame.locals import *
 
 class Bird(pygame.sprite.Sprite): #Criação da classe 'Bird'
@@ -9,7 +10,7 @@ class Bird(pygame.sprite.Sprite): #Criação da classe 'Bird'
                       pygame.image.load('assets/sprites/bluebird-midflap.png').convert_alpha(),
                       pygame.image.load('assets/sprites/bluebird-downflap.png').convert_alpha()] #Imagens responsaveis pela animação
         
-        self.speed = 10
+        self.speed = constant.Constant().SPEED
 
         self.current_image = 0 #Define a imagem atual entre as opções em self.images
 
@@ -18,18 +19,17 @@ class Bird(pygame.sprite.Sprite): #Criação da classe 'Bird'
         print(self.rect) #Print das coordenadas
         
         #Posicionamento central do passaro
-        self.rect[0] = 270/2 
-        self.rect[1] = 512/2 
-        #Obs.: Deve ser feito ajustes para que o posicionamento seja feito de forma referenciada e numerado
+        self.rect[0] = (constant.Constant().SCREEN_WIDTH-18)/2 
+        self.rect[1] = constant.Constant().SCREEN_HEIGTH/2 
 
     def update(self): #Metodo update da classe
         self.current_image = (self.current_image + 1) % 3 #faz a adição e quando self.current_image = 3 então o resto da divisão é 0, logo o ciclo é repetido 
         self.image = self.images[self.current_image] #Seleciona a imagem correnspondente as opções 
 
-        self.speed += 1
+        self.speed += constant.Constant().GRAVITY
         #Atualizar a Vertical
-        self.rect[1] += self.speed #Obs.: Deve ser feito ajustes para que a velocidade vertical seja feito de forma referenciada e numerado
+        self.rect[1] += self.speed 
         
     def bump(self):
-        self.speed = -10
+        self.speed = -constant.Constant().SPEED
        

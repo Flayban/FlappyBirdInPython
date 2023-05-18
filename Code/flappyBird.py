@@ -1,20 +1,13 @@
-import pygame
+import pygame, constant
 from bird import Bird
 from pygame.locals import *
 
-# dimensões vertical e horizontal da tela em pixels
-SCREEN_WIDTH = 288 
-SCREEN_HEIGTH = 512
-
-
 pygame.init() #Inicia o Pygame
-screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGTH)) #dimensiona o display a partir das dimensões já definidas 
+const = constant.Constant()
+screen = pygame.display.set_mode((const.SCREEN_WIDTH,const.SCREEN_HEIGTH)) #dimensiona o display a partir das dimensões já definidas 
 
 BACKGROUND = pygame.image.load('assets/sprites/background-day.png') #selecionando imagem de background
-BACKGROUND = pygame.transform.scale(BACKGROUND,(SCREEN_WIDTH,SCREEN_HEIGTH)) #redimensionando imagem de backgroud para mesma escala do display
-
-SPEED = 10
-GRAVITY = 1
+BACKGROUND = pygame.transform.scale(BACKGROUND,(const.SCREEN_WIDTH,const.SCREEN_HEIGTH)) #redimensionando imagem de backgroud para mesma escala do display
 
 birdGroup = pygame.sprite.Group() #Criação do agrupamento da Classe 'Bird'
 fBird = Bird() #Chamada da Classe 'Bird'
