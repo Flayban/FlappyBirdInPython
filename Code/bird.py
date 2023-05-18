@@ -15,6 +15,8 @@ class Bird(pygame.sprite.Sprite): #Criação da classe 'Bird'
         self.current_image = 0 #Define a imagem atual entre as opções em self.images
 
         self.image = pygame.image.load('assets/sprites/bluebird-midflap.png').convert_alpha() #Selecionando a imagem do Passaro
+        self.mask = pygame.mask.from_surface(self.image) #Cria uma mascara para realizar a colisão
+        
         self.rect = self.image.get_rect() #Coletando as coordenadas em que a imagem estara posicionada na exec.
         print(self.rect) #Print das coordenadas
         

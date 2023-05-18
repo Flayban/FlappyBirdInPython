@@ -50,3 +50,6 @@ while True: #Laço de repetição infinito para manter janela aberta
     groundGrup.draw(screen) #Informar o local que deseja que o ground aparessa (neste caso na tela do jogo)
 
     pygame.display.update() #Atualiza o display
+
+    if pygame.sprite.groupcollide(birdGroup, groundGrup, False, False, pygame.sprite.collide_mask): #Verifica se o Bird colodio com o Ground, se sim finaliza a aplicação
+        break #Finaliza a aplição
