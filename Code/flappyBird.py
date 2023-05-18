@@ -8,12 +8,12 @@ from pygame.locals import *
 def isOffScreen(sprite): #Metodo para verificar se algum sprite saiu completamente da tela
     return sprite.rect[0] < -(sprite.rect[2])
 
-def getRandomPipes(xPos):
-    size = random.randint(100, 300)
-    pipe = Pipe(False, xPos, size)
-    pipeInverted = Pipe(True, xPos, Constant().SCREEN_HEIGTH - size - Constant().PIPE_GAP)
+def getRandomPipes(xPos): #Metodo para criar de forma randomica os pipes com alturas diferentes
+    size = random.randint(100, 300) #Seleciona randomicamente a altura
+    pipe = Pipe(False, xPos, size) #Cria o pipe
+    pipeInverted = Pipe(True, xPos, Constant().SCREEN_HEIGTH - size - Constant().PIPE_GAP) #Cria o pipe invertido
 
-    return (pipe, pipeInverted)
+    return (pipe, pipeInverted) #Retorna o par de pipes
 
 pygame.init() #Inicia o Pygame
 const = Constant()
@@ -32,10 +32,10 @@ for i in range(2): #Realiza a duplicação da chanada da Classe 'Ground'
     groundGrup.add(fGround) #Adção do ground criado ao agrupamento
 
 pipeGroup = pygame.sprite.Group() #Criação do agrupamento da Classe 'Pipe'
-for i in range(2):
-    pipes = getRandomPipes(const.SCREEN_WIDTH* i + 800)
-    pipeGroup.add(pipes[0])
-    pipeGroup.add(pipes[1])
+for i in range(2):#Realiza a duplicação da chanada da Classe 'Pipe'
+    pipes = getRandomPipes(const.SCREEN_WIDTH* i + 800) #Gera os pipes de forma randomica 
+    pipeGroup.add(pipes[0]) #Adção do pipe criado ao agrupamento
+    pipeGroup.add(pipes[1]) #Adção do pipe invertido criado ao agrupamento
 
 clock = pygame.time.Clock() #chama a função clock, responsavel por determinar o FPS do sistema
 
@@ -58,13 +58,13 @@ while True: #Laço de repetição infinito para manter janela aberta
         newGround = Ground(const.GROUND_WIDTH - 20) #Criação de um novo ground
         groundGrup.add(newGround) #Adção do ground criado ao agrupamento
 
-    if isOffScreen(pipeGroup.sprites()[0]):
-        pipeGroup.remove(pipeGroup.sprites()[0])
-        pipeGroup.remove(pipeGroup.sprites()[0])
+    if isOffScreen(pipeGroup.sprites()[0]): #Verifica se os pipes estão fora da tela, caso estejam realiza a remoção dos pipes atuais e cria novos
+        pipeGroup.remove(pipeGroup.sprites()[0]) #Remoção do pipe atual
+        pipeGroup.remove(pipeGroup.sprites()[0]) #Remoção do pipe invertido atual
 
-        newPipe = getRandomPipes(const.SCREEN_WIDTH * 2)
-        pipeGroup.add(newPipe[0])
-        pipeGroup.add(newPipe[1])
+        newPipe = getRandomPipes(const.SCREEN_WIDTH * 2) #Gera os pipes de forma randomica 
+        pipeGroup.add(newPipe[0]) #Adção do pipe criado ao agrupamento
+        pipeGroup.add(newPipe[1]) #Adção do pipe invertido criado ao agrupamento
 
     birdGroup.update() #Atualização do birdGrup
     groundGrup.update() #Atualização do groundGrup
