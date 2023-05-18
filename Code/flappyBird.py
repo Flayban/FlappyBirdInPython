@@ -70,9 +70,9 @@ while True: #Laço de repetição infinito para manter janela aberta
     groundGrup.update() #Atualização do groundGrup
     pipeGroup.update() #Atualização do pipeGrup
 
-    birdGroup.draw(screen) #Informar o local que deseja que o bird aparessa (neste caso na tela do jogo)
-    groundGrup.draw(screen) #Informar o local que deseja que o ground aparessa (neste caso na tela do jogo)
-    pipeGroup.draw(screen) #Informar o local que deseja que o pipe aparessa (neste caso na tela do jogo)
+    birdGroup.draw(screen) #Informar o local que deseja que o bird aparece (neste caso na tela do jogo)
+    groundGrup.draw(screen) #Informar o local que deseja que o ground aparece (neste caso na tela do jogo)
+    pipeGroup.draw(screen) #Informar o local que deseja que o pipe aparece(neste caso na tela do jogo)
 
     pygame.display.update() #Atualiza o display
 
