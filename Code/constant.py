@@ -9,6 +9,10 @@ class Constant():
 
     OBJECT_SPEED = 10 # Velocidade dos objetos
 
-    # dimensões vertical e horizontal do ground em pixels
+    # dimensões vertical e horizontal do 'ground' em pixels
     GROUND_WIDTH = SCREEN_WIDTH * 2
     GROUND_HEIGTH = 100
+
+    # dimensões vertical e horizontal do 'pipe' em pixels
+    PIPE_WIDTH = 120
+    PIPE_HEIGTH = 500
