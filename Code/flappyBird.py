@@ -24,18 +24,18 @@ BACKGROUND = pygame.transform.scale(BACKGROUND,(const.SCREEN_WIDTH,const.SCREEN_
 
 birdGroup = pygame.sprite.Group() #Criação do agrupamento da Classe 'Bird'
 fBird = Bird() #Chamada da Classe 'Bird'
-birdGroup.add(fBird) #Adção do passaro criado ao agrupamento
+birdGroup.add(fBird) #Adição do passaro criado ao agrupamento
 
 groundGrup = pygame.sprite.Group() #Criação do agrupamento da Classe 'Ground'
 for i in range(2): #Realiza a duplicação da chanada da Classe 'Ground'
     fGround = Ground((const.GROUND_WIDTH)* i ) #Chamada da Classe 'Ground'
-    groundGrup.add(fGround) #Adção do ground criado ao agrupamento
+    groundGrup.add(fGround) #Adição do ground criado ao agrupamento
 
 pipeGroup = pygame.sprite.Group() #Criação do agrupamento da Classe 'Pipe'
 for i in range(2):#Realiza a duplicação da chanada da Classe 'Pipe'
     pipes = getRandomPipes(const.SCREEN_WIDTH* i + 800) #Gera os pipes de forma randomica 
-    pipeGroup.add(pipes[0]) #Adção do pipe criado ao agrupamento
-    pipeGroup.add(pipes[1]) #Adção do pipe invertido criado ao agrupamento
+    pipeGroup.add(pipes[0]) #Aidção do pipe criado ao agrupamento
+    pipeGroup.add(pipes[1]) #Aidção do pipe invertido criado ao agrupamento
 
 clock = pygame.time.Clock() #chama a função clock, responsavel por determinar o FPS do sistema
 
@@ -56,15 +56,15 @@ while True: #Laço de repetição infinito para manter janela aberta
         groundGrup.remove(groundGrup.sprites()[0]) #Remoção do ground atual
 
         newGround = Ground(const.GROUND_WIDTH - 20) #Criação de um novo ground
-        groundGrup.add(newGround) #Adção do ground criado ao agrupamento
+        groundGrup.add(newGround) #Adição do ground criado ao agrupamento
 
     if isOffScreen(pipeGroup.sprites()[0]): #Verifica se os pipes estão fora da tela, caso estejam realiza a remoção dos pipes atuais e cria novos
         pipeGroup.remove(pipeGroup.sprites()[0]) #Remoção do pipe atual
         pipeGroup.remove(pipeGroup.sprites()[0]) #Remoção do pipe invertido atual
 
         newPipe = getRandomPipes(const.SCREEN_WIDTH * 2) #Gera os pipes de forma randomica 
-        pipeGroup.add(newPipe[0]) #Adção do pipe criado ao agrupamento
-        pipeGroup.add(newPipe[1]) #Adção do pipe invertido criado ao agrupamento
+        pipeGroup.add(newPipe[0]) #Adição do pipe criado ao agrupamento
+        pipeGroup.add(newPipe[1]) #Adição do pipe invertido criado ao agrupamento
 
     birdGroup.update() #Atualização do birdGrup
     groundGrup.update() #Atualização do groundGrup
