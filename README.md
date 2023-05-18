@@ -22,13 +22,13 @@
 <ul>
    <li>Versão: 3.10.11</li>
 </ul>
-<h3><a href = "https://www.pygame.org/ftp/pygame-1.9.6.tar.gz">PyGame</a></h3>
+<h3><a href = "https://www.pygame.org/news">PyGame</a></h3>
 <ul>
-   <li>Versão: 2.4.0</li>
+   <li>Versão: <a href = "https://www.pygame.org/ftp/pygame-1.9.6.tar.gz">2.4.0</a></li>
 </ul>
 
 <h1>Observações</h1>
-Assents tiradas de https://github.com/sourabhv/FlapPyBird
+      <h4>Assents tiradas em <a href = "https://github.com/sourabhv/FlapPyBird">FlaPyBird</a></h4>
 
 <h1>Status do Projeto:</h1>
 <h4>Em andamento</h4>
