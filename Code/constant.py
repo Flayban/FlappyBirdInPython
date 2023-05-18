@@ -6,3 +6,8 @@ class Constant():
 
     SPEED = 10 #Velocidade do Passaro
     GRAVITY = 1 #Gravidade do Passaro
+
+    OBJECT_SPEED = 10 # Velocidade dos objetos
+
+    GROUND_WIDTH = SCREEN_WIDTH * 2
+    GROUND_HEIGTH = 100
