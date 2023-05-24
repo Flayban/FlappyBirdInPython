@@ -10,11 +10,11 @@
 </ul>
 
 <ul>
-   <li>Objetivo 2: Desenvolver um Banco de Dados para se comunicar com a aplicação e marcar maior pontuação(Não iniciado)</li>
+   <li>Objetivo 2: Desenvolver um Banco de Dados para se comunicar com a aplicação e marcar maior pontuação (Não iniciado)</li>
 </ul>
 
 <ul>
-   <li>Objetivo 1: Portar uma versão funcional para sistema web ou mobile (Não iniciado)</li>
+   <li>Objetivo 1: Portar uma versão funcional para sistema web (Não iniciado)</li>
 </ul>
 
 <h1> Tecnologias Utilizadas </h1>
